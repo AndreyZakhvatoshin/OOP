@@ -1,0 +1,14 @@
+{
+    "name": "andrey/home-work",
+    "description": "OOP",
+    "authors": [
+        {
+            "name": "Andrey Zakhvatoshin",
+            "email": "mastetandron@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {"App\\": "src/"}
+    }
+}
