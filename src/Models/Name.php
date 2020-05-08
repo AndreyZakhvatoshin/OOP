@@ -4,8 +4,8 @@ namespace App\Models;
 
 class Name
 {
-    private $firstName;
-    private $lastName;
+    public $firstName;
+    public $lastName;
 
     public function __construct(string $firstName, string $lastName)
     {
@@ -18,8 +18,8 @@ class Name
         return $this->lastName . ' ' . $this->firstName;
     }
 
-    public function rename(string $firstName, string $lastName)
+    public function sayHello()
     {
-
+        echo 'Hello';
     }
 }
