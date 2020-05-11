@@ -10,7 +10,7 @@ class User
     private $name;
     private $adress;
 
-    public function __construct(Name $name, Adress $adress)
+    public function __construct(Name $name, Adress $adress = null)
     {
         $this->name = $name;
         $this->adress = $adress;
@@ -18,7 +18,7 @@ class User
 
     public function getName()    
     {
-        return $this->name;
+        echo $this->name->firstName;
     }
 
     public function getAdress()
