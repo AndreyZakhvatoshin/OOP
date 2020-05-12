@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Contollers;
+namespace App\Controllers;
 
 class UserController
 {
@@ -11,5 +11,10 @@ class UserController
 
         // Render a template
         echo $templates->render('sign-up');
+    }
+
+    public function sayHello()
+    {
+        echo 'Hello';
     }
 }
