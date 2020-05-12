@@ -13,17 +13,39 @@
 </head>
 <body>
     <header class="header-nav">
-            <ul class="nav justify-content-center">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Главная страница</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Статьи</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Обо мне</a>
-                </li>
-            </ul>
+        <div class="container-fluid">
+            <div class="row">
+            <div class="col-md-3">
+
+            </div>
+            <div class="col-md-7">
+                <ul class="nav justify-content-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Главная страница</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Статьи</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Обо мне</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-2">
+                <ul class="nav justify-content-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Вход</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Регистрация</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        </div>
+        
+            
+            
     </header>
     <?=$this->section('content')?>
 

@@ -4,6 +4,7 @@ use DI\Container;
 
 $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
     $r->addRoute('GET', '/', ["App\Models\Name", "sayHello"]);
+    $r->addRoute('GET', '/sign-up', ["App\Controller\UserController", "signUpUser"]);
     // {id} must be a number (\d+)
     $r->addRoute('GET', '/user/{id:\d+}', 'get_user_handler');
     // The /{title} suffix is optional

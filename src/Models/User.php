@@ -2,32 +2,31 @@
 
 namespace App\Models;
 
-use App\Models\Name;
-use App\Models\Adress;
 
 class User
 {
-    private $name;
-    private $adress;
-
-    public function __construct(Name $name, Adress $adress = null)
+    public function signUp()
     {
-        $this->name = $name;
-        $this->adress = $adress;
-    }
+        $db = new \PDO('mysql:dbname=blog;host=localhost;charset=utf8mb4', 'admin', 'password');
 
-    public function getName()    
-    {
-        echo $this->name->firstName;
-    }
+        $auth = new \Delight\Auth\Auth($db);
 
-    public function getAdress()
-    {
-        return $this->adress;
-    }
-
-    public function rename(Name $name)
-    {
-        $this->name = $name;
+        try {
+            $userId = $auth->register($_POST['email'], $_POST['password'], $_POST['username']);
+        
+            echo 'We have signed up a new user with the ID ' . $userId;
+        }
+        catch (\Delight\Auth\InvalidEmailException $e) {
+            die('Invalid email address');
+        }
+        catch (\Delight\Auth\InvalidPasswordException $e) {
+            die('Invalid password');
+        }
+        catch (\Delight\Auth\UserAlreadyExistsException $e) {
+            die('User already exists');
+        }
+        catch (\Delight\Auth\TooManyRequestsException $e) {
+            die('Too many requests');
+        }
     }
 }
