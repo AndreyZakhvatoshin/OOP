@@ -2,9 +2,11 @@
 
 namespace App\Controllers;
 
+use App\Models\User;
+
 class UserController
 {
-    public function signUpUser()
+    public function actionIndex()
     {
         // Create new Plates instance
         $templates = new \League\Plates\Engine('../src/Views/templates');
@@ -13,8 +15,10 @@ class UserController
         echo $templates->render('sign-up');
     }
 
-    public function sayHello()
+    public function regist()
     {
-        echo 'Hello';
+        $user = new User;
+        $user->signUp();
     }
+
 }

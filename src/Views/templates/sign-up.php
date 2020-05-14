@@ -4,7 +4,7 @@
     <form action="/regist" method="POST">
     <div class="form-group">
             <label for="exampleInputUsername1">Username</label>
-            <input name="username" type="email" class="form-control" id="exampleInputUsername1" aria-describedby="emailHelp">
+            <input name="username" type="text" class="form-control" id="exampleInputUsername1" aria-describedby="emailHelp">
         </div>
         <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>
