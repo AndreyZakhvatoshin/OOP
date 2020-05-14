@@ -8,7 +8,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 
     <title><?= $this->e($title) ?></title>
 </head>
@@ -23,20 +23,20 @@
                 <div class="col-md-7">
                     <ul class="nav justify-content-center">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Главная страница</a>
+                            <a class="nav-link" href="/">Главная страница</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Статьи</a>
+                            <a class="nav-link" href="/posts">Статьи</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Обо мне</a>
+                            <a class="nav-link" href="/about">Обо мне</a>
                         </li>
                     </ul>
                 </div>
                 <div class="col-md-2">
                     <ul class="nav justify-content-center">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Вход</a>
+                            <a class="nav-link" href="/sign-in">Вход</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/sign-up">Регистрация</a>

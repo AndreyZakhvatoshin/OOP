@@ -19,6 +19,8 @@ class UserController
     {
         $user = new User;
         $user->signUp();
+
+        header('Location: /');
     }
 
 }
