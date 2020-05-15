@@ -1,6 +1,17 @@
 <?php
 
 use DI\Container;
+use DI\ContainerBuilder;
+use League\Plates\Engine;
+
+$containerBuilder = new ContainerBuilder();
+$containerBuilder->addDefinitions([
+    Engine::class => function() {
+        return new Engine('../src/Views/templates');
+    }
+]);
+
+$container = $containerBuilder->build();
 
 $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
     $r->addRoute('GET', '/', ["App\Controllers\PostsController", "actionIndex"]);
@@ -35,9 +46,7 @@ switch ($routeInfo[0]) {
         break;
     case FastRoute\Dispatcher::FOUND:
         $handler = $routeInfo[1];
-     
         $vars = $routeInfo[2];
-        $container = new Container();
         $container->call($handler, $vars);
         break;
 }

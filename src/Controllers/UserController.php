@@ -3,16 +3,19 @@
 namespace App\Controllers;
 
 use App\Models\User;
+use League\Plates\Engine;
 
 class UserController
 {
+    private $templates;
+
+    public function __construct(Engine $templates)
+    {
+        $this->templates = $templates;
+    }
     public function actionIndex()
     {
-        // Create new Plates instance
-        $templates = new \League\Plates\Engine('../src/Views/templates');
-
-        // Render a template
-        echo $templates->render('sign-up');
+        echo $this->templates->render('sign-up');
     }
 
     public function regist()
