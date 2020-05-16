@@ -2,32 +2,19 @@
 
 namespace App\Controllers;
 
-use Aura\SqlQuery\QueryFactory;
+use League\Plates\Engine;
 
 class PostsController
 {
-    public static function actionIndex()
-    {
-        $queryFactory = new QueryFactory('mysql');
+    private $template;
 
-        // Create new Plates instance
-        $templates = new \League\Plates\Engine('../src/Views/templates');
-        // Render a template
-        echo $templates->render('main', ['name' => 'Andrey']);
+    public function __construct(Engine $template)
+    {
+        $this->template = $template;
     }
 
-    public function allPosts()
+    public function actionIndex()
     {
-        $templates = new \League\Plates\Engine('../src/Views/templates');
-
-        // Render a template
-        echo $templates->render('posts', ['name' => 'Andrey']);
-    }
-    public function addPost()
-    {
-        $templates = new \League\Plates\Engine('../src/Views/templates');
-
-        // Render a template
-        echo $templates->render('addpost', ['name' => 'Andrey']);
+        echo $this->template->render('main');
     }
 }
