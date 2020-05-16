@@ -2,14 +2,22 @@
 
 namespace App\Models;
 
+use PDO;
+
 
 class User
 {
+
+    private $db;
+
+    public function __construct(PDO $db)
+    {
+        $this->db = $db;
+    }
     public function signUp()
     {
-        $db = new \PDO('mysql:dbname=blog;host=localhost;charset=utf8mb4', 'admin', 'password');
-
-        $auth = new \Delight\Auth\Auth($db);
+        
+        $auth = new \Delight\Auth\Auth($this->db);
 
         try {
             $userId = $auth->register($_POST['email'], $_POST['password'], $_POST['username']);
