@@ -1,13 +1,21 @@
 <?php
 
+use PDO;
 use DI\Container;
 use DI\ContainerBuilder;
 use League\Plates\Engine;
+use Aura\SqlQuery\QueryFactory;
 
 $containerBuilder = new ContainerBuilder();
 $containerBuilder->addDefinitions([
     Engine::class => function() {
         return new Engine('../src/Views/templates');
+    },
+    QueryFactory::class => function() {
+        return new QueryFactory('mysql');
+    },
+    PDO::class => function() {
+        return new PDO('mysql:dbname=blog;host=localhost;charset=utf8mb4', 'admin', 'password');
     }
 ]);
 
