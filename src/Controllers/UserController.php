@@ -9,12 +9,12 @@ use League\Plates\Engine;
 class UserController
 {
     private $templates;
-    private $db;
+    private $user;
 
-    public function __construct(Engine $templates, PDO $db)
+    public function __construct(Engine $templates, User $user)
     {
         $this->templates = $templates;
-        $this->db = $db;
+        $this->user = $user;
     }
     public function actionIndex()
     {
@@ -23,8 +23,7 @@ class UserController
 
     public function regist()
     {
-        $user = new User($this->db);
-        $user->signUp();
+        $this->user->signUp();
 
         header('Location: /');
     }
