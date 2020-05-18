@@ -1,7 +1,7 @@
 <?php $this->layout('template', ['title' => 'Добавить запись']) ?>
 
 <div class="container">
-    <form action="/create-post" method="POST">
+    <form action="/posts/store" method="POST">
         <div class="form-group">
             <label for="exampleFormControlInput1">Заголовок</label>
             <input name="title" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Заголовок">

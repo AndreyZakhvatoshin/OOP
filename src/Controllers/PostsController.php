@@ -21,4 +21,15 @@ class PostsController
         $myPosts = $this->posts->all();
         echo $this->template->render('posts', ['posts' => $myPosts]);
     }
+
+    public function addPost()
+    {
+        echo $this->template->render('addpost');
+    }
+    public function add()
+    {
+        $title = $_POST['title'];
+        $content = $_POST['content'];
+        $this->posts->store('posts', $title, $content);
+    }
 }
