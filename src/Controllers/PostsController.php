@@ -28,8 +28,11 @@ class PostsController
     }
     public function add()
     {
-        $title = $_POST['title'];
-        $content = $_POST['content'];
-        $this->posts->store('posts', $title, $content);
+        $data['title'] = $_POST['title'];
+        $data['content'] = $_POST['content'];
+        $data['date'] = date('d.m.Y');
+        $this->posts->store('posts', $data);
+
+        header('Location: /posts');
     }
 }

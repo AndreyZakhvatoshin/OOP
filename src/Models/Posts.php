@@ -26,17 +26,11 @@ class Posts
         $myPosts = $sth->fetchAll(PDO::FETCH_ASSOC);
         return $myPosts;
     }
-    public function store(string $table, string $title, string $content)
+    public function store(string $table, array $cols)
     {
-        $date = date('d.m.Y');
-        var_dump($date);die;
         $insert = $this->queryFactory->newInsert();
         $insert->into($table)
-            ->cols([
-                'title' => $title,
-                'content' => $content,
-                'date' => $date
-            ]);
+            ->cols($cols);
         $sth = $this->db->prepare($insert->getStatement());
         $sth->execute($insert->getBindValues());
     }
