@@ -28,4 +28,16 @@ class UserController
         header('Location: /');
     }
 
+    public function logIn()
+    {
+        echo $this->templates->render('sign-in');
+    }
+
+    public function enter()
+    {
+        $this->user->login();
+
+        header('Location: /');
+    }
+
 }

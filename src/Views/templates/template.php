@@ -36,7 +36,11 @@
                 <div class="col-md-2">
                     <ul class="nav justify-content-center">
                         <li class="nav-item">
-                            <a class="nav-link" href="/sign-in">Вход</a>
+                            <?php if(empty($_SESSION)): ?>
+                                <a class="nav-link" href="/sign-in">Вход</a>
+                            <?php else: ?>
+                                <a class="nav-link" href="/sign-in">Выход</a>
+                            <?php endif; ?>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/sign-up">Регистрация</a>
