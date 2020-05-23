@@ -40,4 +40,11 @@ class UserController
         header('Location: /');
     }
 
+    public function logout()
+    {
+        $this->user->logout();
+
+        header('Location: /');
+    }
+
 }

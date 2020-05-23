@@ -39,11 +39,13 @@
                             <?php if(empty($_SESSION)): ?>
                                 <a class="nav-link" href="/sign-in">Вход</a>
                             <?php else: ?>
-                                <a class="nav-link" href="/sign-in">Выход</a>
+                                <a class="nav-link" href="/exit">Выход</a>
                             <?php endif; ?>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/sign-up">Регистрация</a>
+                            <?php if(empty($_SESSION)): ?>
+                                <a class="nav-link" href="/sign-up">Регистрация</a>
+                            <?php endif; ?>
                         </li>
                     </ul>
                 </div>

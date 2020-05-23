@@ -18,7 +18,7 @@ class PostsController
 
     public function actionIndex()
     {
-        $myPosts = $this->posts->all();
+        $myPosts = array_reverse($this->posts->all());
         echo $this->template->render('posts', ['posts' => $myPosts]);
     }
 

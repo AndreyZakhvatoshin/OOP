@@ -60,4 +60,10 @@ class User
             die('Too many requests');
         }
     }
+
+    public function logout()
+    {
+        $auth = new \Delight\Auth\Auth($this->db);
+        $auth->logOut();
+    }
 }

@@ -4,6 +4,7 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
     $r->addRoute('GET', '/', ["App\Controllers\FrontController", "actionIndex"]);
     $r->addRoute('GET', '/sign-up', ["App\Controllers\UserController", "actionIndex"]);
     $r->addRoute('GET', '/sign-in', ["App\Controllers\UserController", "logIn"]);
+    $r->addRoute('GET', '/exit', ["App\Controllers\UserController", "logout"]);
     $r->addRoute('POST', '/regist', ["App\Controllers\UserController", "regist"]);
     $r->addRoute('POST', '/login', ["App\Controllers\UserController", "enter"]);
     $r->addRoute('GET', '/posts', ["App\Controllers\PostsController", "actionIndex"]);
