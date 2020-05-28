@@ -18,11 +18,11 @@ class PostsController
 
     public function actionIndex()
     {
-        $myPosts = array_reverse($this->posts->all());
+        $myPosts = array_reverse($this->posts->all('posts'));
         echo $this->template->render('posts', ['posts' => $myPosts]);
     }
 
-    public function addPost()
+    public function showAddForm()
     {
         echo $this->template->render('addpost');
     }

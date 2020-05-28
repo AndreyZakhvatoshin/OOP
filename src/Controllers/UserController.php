@@ -36,7 +36,6 @@ class UserController
     public function enter()
     {
         $this->user->login();
-
         header('Location: /');
     }
 

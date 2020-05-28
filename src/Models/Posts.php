@@ -2,36 +2,24 @@
 
 namespace App\Models;
 
-use PDO;
-use Aura\SqlQuery\QueryFactory;
+use App\Models\Database;
 
 class Posts
 {
     private $db;
-    private $queryFactory;
 
-    public function __construct(PDO $db, QueryFactory $queryFactory)
+    public function __construct(Database $db)
     {
         $this->db = $db;
-        $this->queryFactory = $queryFactory;
     }
 
-    public function all()
+    public function all(string $table): array
     {
-        $select = $this->queryFactory->newSelect();
-        $select->cols(["*"])
-            ->from('posts');
-        $sth = $this->db->prepare($select->getStatement());
-        $sth->execute($select->getBindValues());
-        $myPosts = $sth->fetchAll(PDO::FETCH_ASSOC);
-        return $myPosts;
+        return $this->db->all($table);
     }
-    public function store(string $table, array $cols)
+
+    public function store(string $table, array $data)
     {
-        $insert = $this->queryFactory->newInsert();
-        $insert->into($table)
-            ->cols($cols);
-        $sth = $this->db->prepare($insert->getStatement());
-        $sth->execute($insert->getBindValues());
+        $this->db->create($table, $data);
     }
 }
