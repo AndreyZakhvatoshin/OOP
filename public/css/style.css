@@ -21,3 +21,19 @@
 .nav-link:hover {
     color: cornsilk;
 }
+
+/*---footer---*/
+.footer-content {
+    background-color: blueviolet;
+    min-height: 5rem;
+}
+
+.footer-col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-col > p {
+    margin: 0;
+}
