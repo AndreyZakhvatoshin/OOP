@@ -36,19 +36,24 @@
                     </div>
                     <div class="col-md-2">
                         <ul class="nav justify-content-center">
-                            <li class="nav-item">
-                                <?php if (!isset($_SESSION["auth_username"])) : ?>
+                            <?php if (!isset($_SESSION["auth_username"])) : ?>
+                                <li class="nav-item">
                                     <a class="nav-link" href="/sign-in">Вход</a>
-                                <?php else : ?>
-                                    <a class="nav-link" href="/users/id"><?= $_SESSION["auth_username"]; ?><a>
-                                    <a class="nav-link" href="/exit">Выход</a>
-                                <?php endif; ?>
-                            </li>
-                            <li class="nav-item">
-                                <?php if (empty($_SESSION)) : ?>
+                                </li>
+                                <li class="nav-item">
                                     <a class="nav-link" href="/sign-up">Регистрация</a>
-                                <?php endif; ?>
-                            </li>
+                                </li>
+                            <?php else : ?>
+                                <li class="nav-item">
+                                    <p class="user-greating">
+                                        Привет, <a class="user-link" href="/users/id"><?= $_SESSION["auth_username"]; ?><a>
+                                    </p>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/exit">Выход</a>
+
+                                </li>
+                            <?php endif; ?>
                         </ul>
                     </div>
                 </div>
@@ -57,7 +62,7 @@
         <div class="content">
             <?= $this->section('content') ?>
         </div>
-        
+
         <footer>
             <div class="container-fluid">
                 <div class="row footer-content">

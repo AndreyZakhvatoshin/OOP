@@ -21,7 +21,10 @@
 .nav-link:hover {
     color: cornsilk;
 }
-
+.user-greating {
+    margin: 0;
+    padding: 8px 16px;
+}
 /*---footer---*/
 .footer-content {
     background-color: blueviolet;
