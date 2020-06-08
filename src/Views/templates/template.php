@@ -37,9 +37,10 @@
                     <div class="col-md-2">
                         <ul class="nav justify-content-center">
                             <li class="nav-item">
-                                <?php if (empty($_SESSION)) : ?>
+                                <?php if (!isset($_SESSION["auth_username"])) : ?>
                                     <a class="nav-link" href="/sign-in">Вход</a>
                                 <?php else : ?>
+                                    <a class="nav-link" href="/users/id"><?= $_SESSION["auth_username"]; ?><a>
                                     <a class="nav-link" href="/exit">Выход</a>
                                 <?php endif; ?>
                             </li>

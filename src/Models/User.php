@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use PDO;
+use App\Models\Database;
 use Delight\Auth\Auth;
 
 
@@ -10,10 +11,12 @@ class User
 {
 
     private $db;
+    private $database;
 
-    public function __construct(PDO $db)
+    public function __construct(PDO $db, Database $database)
     {
         $this->db = $db;
+        $this->database = $database;
     }
     public function signUp()
     {
