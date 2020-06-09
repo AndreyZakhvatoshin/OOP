@@ -6,6 +6,7 @@
 }
 .content {
     flex: 1;
+    background-color: #eff0f1;
 }
 .header-nav {
     padding-top: 2em;
@@ -24,6 +25,9 @@
 .user-greating {
     margin: 0;
     padding: 8px 16px;
+}
+.news {
+    background-color: brown;
 }
 /*---footer---*/
 .footer-content {
