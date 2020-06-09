@@ -57,7 +57,17 @@ class Database
             ->cols($data)
             ->where('id = :id')
             ->bindValue('id', $id);
-            $sth = $this->pdo->prepare($update->getStatement());
+        $sth = $this->pdo->prepare($update->getStatement());
         $sth->execute($update->getBindValues());
+    }
+
+    public function delete($table, $id)
+    {
+        $delete = $this->queryFactory->newDelete();
+        $delete->from($table)
+            ->where('id = :id')
+            ->bindValue('id', $id);
+        $sth = $this->pdo->prepare($delete->getStatement());
+        $sth->execute($delete->getBindValues());
     }
 }
