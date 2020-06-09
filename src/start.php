@@ -1,11 +1,9 @@
 <?php
 
 use PDO;
-use DI\Container;
 use DI\ContainerBuilder;
 use League\Plates\Engine;
 use Aura\SqlQuery\QueryFactory;
-use App\Models\Database;
 
 $containerBuilder = new ContainerBuilder();
 $containerBuilder->addDefinitions([
@@ -17,9 +15,6 @@ $containerBuilder->addDefinitions([
     },
     PDO::class => function() {
         return new PDO('mysql:dbname=blog;host=localhost;charset=utf8mb4', 'admin', 'password');
-    },
-    Database::class => function() {
-        return new Database(new QueryFactory('mysql'), new PDO('mysql:dbname=blog;host=localhost;charset=utf8mb4', 'admin', 'password'));
     }
 ]);
 
