@@ -15,69 +15,13 @@
 
 <body>
     <div class="page">
-        <header class="header-nav">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-3">
+        <?= $this->insert('partials/header') ?>
 
-                    </div>
-                    <div class="col-md-7">
-                        <ul class="nav justify-content-center">
-                            <li class="nav-item">
-                                <a class="nav-link" href="/">Главная страница</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/posts">Статьи</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/about">Обо мне</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-md-2">
-                        <ul class="nav justify-content-center">
-                            <?php if (!isset($_SESSION["auth_username"])) : ?>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/sign-in">Вход</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/sign-up">Регистрация</a>
-                                </li>
-                            <?php else : ?>
-                                <li class="nav-item">
-                                    <p class="user-greating">
-                                        Привет, <a class="user-link" href="/users/id"><?= $_SESSION["auth_username"]; ?><a>
-                                    </p>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/exit">Выход</a>
-
-                                </li>
-                            <?php endif; ?>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </header>
         <div class="content">
             <?= $this->section('content') ?>
         </div>
 
-        <footer>
-            <div class="container-fluid">
-                <div class="row footer-content">
-                    <div class="col-md-3 footer-col">
-                        <p class="info">Привет</p>
-                    </div>
-                    <div class="col-md-6 footer-col">
-                        <p class="copyright">2020</p>
-                    </div>
-                    <div class="col-md-3 footer-col">
-                        <p class="email-adress">mastetandron@gmail.com</p>
-                    </div>
-                </div>
-            </div>
-        </footer>
+        <?= $this->insert('partials/footer') ?>
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
