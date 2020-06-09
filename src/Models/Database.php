@@ -49,4 +49,15 @@ class Database
         $sth = $this->pdo->prepare($insert->getStatement());
         $sth->execute($insert->getBindValues());
     }
+
+    public function update($table, $id, $data)
+    {
+        $update = $this->queryFactory->newUpdate();
+        $update->table($table)
+            ->cols($data)
+            ->where('id = :id')
+            ->bindValue('id', $id);
+            $sth = $this->pdo->prepare($update->getStatement());
+        $sth->execute($update->getBindValues());
+    }
 }
