@@ -28,7 +28,7 @@ class UserController
         header('Location: /');
     }
 
-    public function logIn()
+    public function showLoginForm()
     {
         echo $this->templates->render('sign-in');
     }

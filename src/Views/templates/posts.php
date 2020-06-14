@@ -1,10 +1,6 @@
 <?php $this->layout('template', ['title' => 'Все записи'])?>
 
-<div class="container-fluid">
     <div class="row">
-        <div class="col-md-2">
-        
-        </div>
         <div class="col-md-8">
         <?php foreach($posts as $post): ?>
             <h3><?= $post['title']; ?></h3>
@@ -12,7 +8,6 @@
         <?php endforeach; ?>
         </div>
         <div class="col-md-2">
-            <a href="/posts/add">Добавить запись</a>
+            <?= $this->insert('post-sidebar'); ?>
         </div>
     </div>
-</div>

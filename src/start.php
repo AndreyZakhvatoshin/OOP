@@ -4,6 +4,7 @@ use PDO;
 use DI\ContainerBuilder;
 use League\Plates\Engine;
 use Aura\SqlQuery\QueryFactory;
+use Delight\Auth\Auth;
 
 $containerBuilder = new ContainerBuilder();
 $containerBuilder->addDefinitions([
@@ -15,7 +16,7 @@ $containerBuilder->addDefinitions([
     },
     PDO::class => function() {
         return new PDO('mysql:dbname=blog;host=localhost;charset=utf8mb4', 'admin', 'password');
-    }
+    },
 ]);
 
 $container = $containerBuilder->build();

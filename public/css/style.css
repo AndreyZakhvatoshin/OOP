@@ -8,6 +8,7 @@
     flex: 1;
     background-color: #eff0f1;
 }
+/*-----header----------------*/
 .header-nav {
     padding-top: 2em;
     padding-bottom: 2em;
@@ -15,7 +16,7 @@
 }
 
 .nav-link {
-    color: burlywood;
+    color: rgb(222, 184, 135);
     text-transform: uppercase;
     font-weight: bold;
 }
@@ -25,10 +26,13 @@
 .user-greating {
     margin: 0;
     padding: 8px 16px;
+    font-weight: bold;
+    color: rgb(222, 184, 135);
 }
-.news {
-    background-color: brown;
+.user-link {
+    color: rgb(255, 255, 255);
 }
+
 /*---footer---*/
 .footer-content {
     background-color: blueviolet;

@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use PDO;
-use App\Models\Database;
 use Delight\Auth\Auth;
 
 
@@ -11,20 +10,18 @@ class User
 {
 
     private $db;
-    private $database;
+    private $auth;
 
-    public function __construct(PDO $db, Database $database)
+    public function __construct(PDO $db)
     {
         $this->db = $db;
-        $this->database = $database;
+        $this->auth = new Auth($this->db);
     }
     public function signUp()
     {
-        
-        $auth = new Auth($this->db);
 
         try {
-            $userId = $auth->register($_POST['email'], $_POST['password'], $_POST['username']);
+            $userId = $this->auth->register($_POST['email'], $_POST['password'], $_POST['username']);
         
             //echo 'We have signed up a new user with the ID ' . $userId;
         }
@@ -43,11 +40,9 @@ class User
     }
 
     public function login()
-    {
-        $auth = new Auth($this->db);
-        
+    {   
         try {
-            $auth->login($_POST['email'], $_POST['password']);
+            $this->auth->login($_POST['email'], $_POST['password']);
         
             echo 'User is logged in';
         }
@@ -67,7 +62,6 @@ class User
 
     public function logout()
     {
-        $auth = new \Delight\Auth\Auth($this->db);
-        $auth->logOut();
+        $this->auth->logOut();
     }
 }
