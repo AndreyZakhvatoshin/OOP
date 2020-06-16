@@ -2,7 +2,6 @@
 
 namespace App\Controllers;
 
-use PDO;
 use App\Models\User;
 use League\Plates\Engine;
 
