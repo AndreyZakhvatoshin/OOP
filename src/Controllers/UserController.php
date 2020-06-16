@@ -41,7 +41,7 @@ class UserController
     public function logout()
     {
         $this->user->logout();
-        
+
         header('Location: /');
     }
 

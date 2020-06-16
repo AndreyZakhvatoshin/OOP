@@ -1,7 +1,7 @@
 <?php
 
 $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
-    $r->addRoute('GET', '/', ["App\Controllers\FrontController", "actionIndex"]);
+    $r->addRoute('GET', '/', ["App\Controllers\HomeController", "actionIndex"]);
     $r->addRoute('GET', '/sign-up', ["App\Controllers\UserController", "actionIndex"]);
     $r->addRoute('GET', '/sign-in', ["App\Controllers\UserController", "showLoginForm"]);
     $r->addRoute('GET', '/exit', ["App\Controllers\UserController", "logout"]);

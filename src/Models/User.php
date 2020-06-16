@@ -22,7 +22,7 @@ class User
 
         try {
             $userId = $this->auth->register($_POST['email'], $_POST['password'], $_POST['username']);
-        
+
             //echo 'We have signed up a new user with the ID ' . $userId;
         }
         catch (\Delight\Auth\InvalidEmailException $e) {
@@ -40,10 +40,10 @@ class User
     }
 
     public function login()
-    {   
+    {
         try {
             $this->auth->login($_POST['email'], $_POST['password']);
-        
+
             echo 'User is logged in';
         }
         catch (\Delight\Auth\InvalidEmailException $e) {
@@ -63,5 +63,10 @@ class User
     public function logout()
     {
         $this->auth->logOut();
+    }
+
+    public function isLoged()
+    {
+        $this->auth->isLoggedIn();
     }
 }
