@@ -19,7 +19,7 @@
             </div>
             <div class="col-md-2">
                 <ul class="nav justify-content-center">
-                    <?php if (!isset($_SESSION["auth_username"])) : ?>
+                    <?php if (!auth()->check()) : ?>
                         <li class="nav-item">
                             <a class="nav-link" href="/sign-in">Вход</a>
                         </li>
@@ -29,7 +29,7 @@
                     <?php else : ?>
                         <li class="nav-item">
                             <p class="user-greating">
-                                Привет, <a class="user-link" href="/users/id"><?= $_SESSION["auth_username"]; ?><a>
+                                Привет, <a class="user-link" href="/users/id"><?= auth()->getUsername(); ?><a>
                             </p>
                         </li>
                         <li class="nav-item">

@@ -17,11 +17,15 @@ $containerBuilder->addDefinitions([
     PDO::class => function() {
         return new PDO('mysql:dbname=blog;host=localhost;charset=utf8mb4', 'admin', 'password');
     },
+    Auth::class => function($container) {
+        return new Auth($container->get('PDO'));
+    }
 ]);
 
 $container = $containerBuilder->build();
 
 require dirname(__DIR__) . '/src/Components/routes.php';
+require dirname(__DIR__) . '/src/Components/helpers.php';
 
 // Fetch method and URI from somewhere
 $httpMethod = $_SERVER['REQUEST_METHOD'];

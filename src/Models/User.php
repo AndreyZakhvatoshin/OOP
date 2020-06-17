@@ -64,9 +64,4 @@ class User
     {
         $this->auth->logOut();
     }
-
-    public function isLoged()
-    {
-        $this->auth->isLoggedIn();
-    }
 }
