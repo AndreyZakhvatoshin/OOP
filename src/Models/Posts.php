@@ -22,4 +22,9 @@ class Posts
     {
         $this->db->create($table, $data);
     }
+
+    public function show(string $table, int $id)
+    {
+        return $this->db->find($table, $id);
+    }
 }
