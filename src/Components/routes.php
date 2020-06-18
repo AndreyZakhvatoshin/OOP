@@ -9,6 +9,7 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
     $r->addRoute('POST', '/login', ["App\Controllers\UserController", "enter"]);
     $r->addRoute('GET', '/posts', ["App\Controllers\PostsController", "actionIndex"]);
     $r->addRoute('GET', '/posts/add', ["App\Controllers\PostsController", "showAddForm"]);
+    $r->addRoute('GET', '/posts/{id:\d+}', ["App\Controllers\PostsController", "showPost"]);
     $r->addRoute('POST', '/posts/store', ["App\Controllers\PostsController", "add"]);
     // {id} must be a number (\d+)
     $r->addRoute('GET', '/user/{id:\d+}', 'get_user_handler');
