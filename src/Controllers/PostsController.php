@@ -24,7 +24,7 @@ class PostsController
 
     public function showAddForm()
     {
-        echo $this->template->render('addpost');
+        echo $this->template->render('posts/addpost');
     }
     public function add()
     {

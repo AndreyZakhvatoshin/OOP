@@ -18,19 +18,11 @@
         <?= $this->insert('partials/header') ?>
 
         <div class="content">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-2 news">
-                        <aside></aside>
-                    </div>
-                    <div class="col-md-7">
-                        <?= $this->section('content') ?>
-                    </div>
-                    <div class="col-md-3"></div>
+            <div class="container">
+                <div class="main-content">
+                    <?= $this->section('content') ?>
                 </div>
-
             </div>
-
         </div>
 
         <?= $this->insert('partials/footer') ?>

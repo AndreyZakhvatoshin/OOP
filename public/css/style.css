@@ -32,7 +32,10 @@
 .user-link {
     color: rgb(255, 255, 255);
 }
-
+/*---main-content--------*/
+.main-content {
+    margin: 1.5rem 0;
+}
 /*---footer---*/
 .footer-content {
     background-color: blueviolet;
