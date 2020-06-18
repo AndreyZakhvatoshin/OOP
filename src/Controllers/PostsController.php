@@ -19,7 +19,7 @@ class PostsController
     public function actionIndex()
     {
         $myPosts = array_reverse($this->posts->all('posts'));
-        echo $this->template->render('posts', ['posts' => $myPosts]);
+        echo $this->template->render('posts/posts', ['posts' => $myPosts]);
     }
 
     public function showAddForm()
@@ -34,5 +34,12 @@ class PostsController
         $this->posts->store('posts', $data);
 
         header('Location: /posts');
+    }
+
+    public function showPost($id)
+    {
+        $post = $this->posts->show('posts', $id);
+
+        echo $this->template->render('posts/show', ['post' => $post]);
     }
 }
